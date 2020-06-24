@@ -1,13 +1,12 @@
 package com.bikes.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import com.bikes.models.Bike;
-import com.bikes.repositories.BikeRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+// import com.bikes.repositories.BikeRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,12 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/bikes")
 @RestController
 public class BikesController {
+    //no constructor needed to access the JpaRepository
     @Autowired
-    private BikeRepository bikeRepository;
-
-    public BikesController(BikeRepository bikeRepository) {
-        this.bikeRepository = bikeRepository;
-    }
+    private com.bikes.repositories.BikeRepository bikeRepository;
 
     @GetMapping
     public List<Bike> list(){
