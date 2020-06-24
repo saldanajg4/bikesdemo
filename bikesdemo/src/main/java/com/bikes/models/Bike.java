@@ -8,11 +8,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /***
  * Create primary key for the class normally called id and use
- * annotations to specify @Id and auto generated
+ * annotations to specify @Id and auto generated.  
+ * We need to ignore other hibernate methods not needed on the 
+ * Entity.
  */
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Bike {
     //added as primary key for record and create getter and setter
     @Id
