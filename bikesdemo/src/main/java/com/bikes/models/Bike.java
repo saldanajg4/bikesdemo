@@ -3,7 +3,27 @@ package com.bikes.models;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+/***
+ * Create primary key for the class normally called id and use
+ * annotations to specify @Id and auto generated
+ */
+@Entity
 public class Bike {
+    //added as primary key for record and create getter and setter
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    /****
+     * I will leave these properties as they are.  
+     * Columnames and column mapping but jpa will directly map to our structure
+     * by just attribute name and column name
+     */
     private String name;
     private String email;
     private String phone;
@@ -75,5 +95,13 @@ public class Bike {
 
     public void setContact(boolean contact) {
         this.contact = contact;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
