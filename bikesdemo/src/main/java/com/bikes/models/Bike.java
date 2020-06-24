@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /***
@@ -35,6 +36,9 @@ public class Bike {
     private String model;
     private String serialNumber;
     private BigDecimal purchasePrice;
+
+    //passing date data back and forth easier
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
     private Date purchaseDate;
     private boolean contact;
 
