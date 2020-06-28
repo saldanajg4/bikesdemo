@@ -38,7 +38,7 @@ public class Bike {
     private BigDecimal purchasePrice;
 
     //passing date data back and forth easier
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy")
     private Date purchaseDate;
     private boolean contact;
 
