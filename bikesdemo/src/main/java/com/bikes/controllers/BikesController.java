@@ -25,7 +25,7 @@ public class BikesController {
 
     @GetMapping
     public List<Bike> list(){
-        var allBikes = this.bikeRepository.findAll();
+        List<Bike> allBikes = this.bikeRepository.findAll();
         return allBikes;
     }
     
