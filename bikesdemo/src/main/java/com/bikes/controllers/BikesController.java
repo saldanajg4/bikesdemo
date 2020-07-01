@@ -25,9 +25,10 @@ public class BikesController {
 
     @GetMapping
     public List<Bike> list(){
-        var allBikes = this.bikeRepository.findAll();
+        List<Bike> allBikes = this.bikeRepository.findAll();
         return allBikes;
     }
+    
     
     /**
      * Take the bike body and persist it using Jpa save method to insert it 
